@@ -24,6 +24,8 @@ const Header = () => {
                     <div ><h4>img</h4></div>
                     <div className='flex gap-4'>
                         <Link to='/'>Home</Link>
+                        <Link to='/blog'>Blog</Link>
+                        <Link to='/about'>About</Link>
                         {user ?
                             <button onClick={() => signOut(auth)}>SignOut</button> :
                             <Link to='/login'>Login</Link>
