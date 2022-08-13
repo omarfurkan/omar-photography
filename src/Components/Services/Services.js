@@ -13,11 +13,11 @@ const Services = () => {
     }, [])
     return (
         <div className='my-background text-white'>
-            <div className='w-5/6 mx-auto' >
-                <h1 className='text-center pt-24 text-4xl font-bold mb-4'>Our Service</h1>
-                <p className='text-center w-2/6 mx-auto'>Service that makes your moment captured forever</p>
+            <div className='w-11/12  xl:w-5/6 mx-auto' >
+                <h1 className='text-center pt-8 xl:pt-24 text-4xl font-bold mb-4'>Our Service</h1>
+                <p className='text-center w-11/12 xl:w-2/6 mx-auto'>Service that makes your moment captured forever</p>
                 <hr className='w-1/6 mx-auto mt-4 mb-8' />
-                <div className='grid grid-cols-3 gap-12'>
+                <div className='grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-12 md:gap-6'>
                     {
                         services.map(service => <Service
                             key={service.id}

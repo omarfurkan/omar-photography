@@ -4,7 +4,9 @@ import auth from '../../firebase.init'
 import { useState } from 'react';
 import Loading from '../Loading/Loading';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -14,6 +16,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
 
 
 
@@ -40,13 +43,20 @@ const Login = () => {
     }
 
 
+    if (sending) {
+        toast("Check you Email to Reset Password")
+    }
+
+
+
 
     return (
         <div className='my-background h-full' >
-            <div className='w-3/6 mx-auto pt-20 pb-20'>
+            <div className='w-11/12 md:w-4/6  lg:w-3/6 mx-auto pt-20 pb-20'>
+
                 <div className='border-2'>
                     <p className='text-white text-center'>logo</p>
-                    <form onSubmit={handleSubmit} className='p-8'>
+                    <form onSubmit={handleSubmit} className='pt-8 px-2 md:px-8 lg:px-8  pb-4'>
 
 
                         <input onBlur={handleEmail} className='w-full mb-4 py-3 pl-4 text-lg' type="email" name="email" id="" placeholder='Email' required />
@@ -59,6 +69,8 @@ const Login = () => {
                         {error ? <p className='text-red-400 mb-2'>{error.message}</p> : ''}
 
                         <input className='w-full bg-white text-black font-bold py-3 font bold text-xl' type="submit" value="Log In" />
+                        <p onClick={() => sendPasswordResetEmail(email)} className='text-white mt-2 mb-0 cursor-pointer'>Forget Pasword?</p>
+
                     </form>
                     <div className='flex items-center gap-4 w-11/12 mx-auto mb-2'>
                         <hr className='h-2 w-5/6' />
@@ -71,7 +83,7 @@ const Login = () => {
 
                 <p className='text-white text-xl text-center'>Don't have an account?</p>
                 <button onClick={() => navigate('/signup')} className='mx-auto block border-2 py-4 w-full text-white font-bold mt-4'>Sign Up for OmarPhotography</button>
-
+                <ToastContainer />
             </div>
         </div >
     );

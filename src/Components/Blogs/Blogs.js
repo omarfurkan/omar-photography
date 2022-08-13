@@ -26,7 +26,7 @@ const Blogs = () => {
         <div className='my-background h-full pb-12'>
             <h1 className='text-center text-white text-4xl pt-8 pb-6 font-semibold'>Blog</h1>
             <hr className='h-4 w-12 mx-auto' />
-            <div className='w-5/6 mx-auto '>
+            <div className='w-11/12 xl:w-5/6 mx-auto '>
                 {
                     QA.map((blog, index) =>
                         <Blog

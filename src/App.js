@@ -1,5 +1,4 @@
 import './App.css';
-import Header from './Components/Shared/Header/Header';
 import { Routes, Route } from "react-router-dom";
 import Home from './Components/Home/Home';
 import CheckOut from './Components/CheckOut/CheckOut';
@@ -10,8 +9,10 @@ import Blog from './Components/Blogs/Blogs';
 import About from './Components/About/About';
 import NotFound from './Components/NotFound/NotFound';
 import PageLayout from './Components/PageLayout/PageLayout';
+import { useEffect, useState } from 'react';
 
 function App() {
+
   return (
     <div >
 
@@ -22,7 +23,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/checkout" element={
+          <Route path="/checkout/:serviceId" element={
             <RequireAuth>
               <CheckOut />
             </RequireAuth>} />

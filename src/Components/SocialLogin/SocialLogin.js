@@ -20,7 +20,7 @@ const SocialLogin = () => {
     }
 
     return (
-        <div className='p-8'>
+        <div className=' p-2 md:p-8 lg:p-8'>
             <button onClick={facebookLogin} className=' w-full bg-white mt-4  py-4 font-bold flex items-center justify-center'> <FaFacebookF className='mr-6 text-4xl' />Continue With FACEBOOK</button>
             <button onClick={gitLogin} className=' w-full bg-white mt-4  py-4 font-bold flex items-center justify-center'><AiFillGithub className='mr-6 text-4xl' /> Continue With GITHUB</button>
             <button onClick={googleLogin} className=' w-full bg-white mt-4 py-4 font-bold flex items-center justify-center'><BsGoogle className='mr-6 text-4xl' /> Continue With GOOGLE</button>

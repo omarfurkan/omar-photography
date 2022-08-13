@@ -1,20 +1,20 @@
 [
   {
-    "id": "101",
+    "id": 101,
     "name": "Commercial Photography",
     "img": "https://cdn-icons-png.flaticon.com/512/1238/1238999.png?w=740&t=st=1660101625~exp=1660102225~hmac=2fd087f29b9576095a96836b720b7076a977bd638b3e5a000645a5f7c17430f4",
     "price": 183,
     "description": "Commercial phtograph or advertising phtograph shoots for your business and othe stuff to promote and get high marketing value of your business or product with care and support"
   },
   {
-    "id": "102",
+    "id": 102,
     "name": "Event Photography",
     "img": "https://cdn-icons-png.flaticon.com/512/1238/1238999.png?w=740&t=st=1660101625~exp=1660102225~hmac=2fd087f29b9576095a96836b720b7076a977bd638b3e5a000645a5f7c17430f4",
     "price": 183,
     "description": "This service provides the shoot of any wedding ceremony, birthday party, get-togather , business affairs or any events that you are gonna celebrate"
   },
   {
-    "id": "103",
+    "id": 103,
     "name": "Lifestyle Photography",
     "img": "https://cdn-icons-png.flaticon.com/512/1238/1238999.png?w=740&t=st=1660101625~exp=1660102225~hmac=2fd087f29b9576095a96836b720b7076a977bd638b3e5a000645a5f7c17430f4",
     "price": 183,
