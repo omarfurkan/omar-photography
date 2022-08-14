@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 const Service = ({ service }) => {
     const { id, name, price, img, description } = service
     const navigate = useNavigate();
+
+
     return (
-        <div className='border-2 my-4 h-[430px] md:h-96 relative'>
+        <div className='border-2 my-4 h-[430px] md:h-96 relative '>
             <div className='mt-8 mb-4 '>
                 <img className='w-52 h-32 mx-auto border-2 p-2 text-white' src={img} alt="" />
             </div>

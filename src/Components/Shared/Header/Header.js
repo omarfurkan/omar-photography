@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 import Loading from '../../Loading/Loading';
 import { ImCamera } from 'react-icons/im';
+import CustomLink from '../../CustomLink/CustomLink';
 
 
 const Header = () => {
@@ -24,9 +25,10 @@ const Header = () => {
                 <nav className='flex justify-between items-center'>
                     <div ><p className='text-center text-4xl'><ImCamera /></p></div>
                     <div className='flex gap-4'>
-                        <Link to='/'>Home</Link>
-                        <Link to='/blog'>Blog</Link>
-                        <Link to='/about'>About</Link>
+                        <CustomLink to='/'>Home</CustomLink>
+                        <CustomLink to='/blog'>Blog</CustomLink>
+                        <CustomLink to='/about'>About</CustomLink>
+                        <CustomLink to='/contact'>Contact</CustomLink>
                         {user ?
                             <button onClick={() => signOut(auth)}>SignOut</button> :
                             <Link to='/login'>Login</Link>

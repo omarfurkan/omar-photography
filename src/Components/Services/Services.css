@@ -6,3 +6,17 @@
     rgba(55, 52, 53, 1) 100%
   );
 }
+
+.slideInLeft {
+  background-color: red;
+  animation-duration: 4s;
+}
+
+@keyframes slideInLeft {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
+}

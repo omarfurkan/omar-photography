@@ -9,6 +9,7 @@ import Blog from './Components/Blogs/Blogs';
 import About from './Components/About/About';
 import NotFound from './Components/NotFound/NotFound';
 import PageLayout from './Components/PageLayout/PageLayout';
+import Contact from './Components/Contact/Contact';
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/checkout/:serviceId" element={
             <RequireAuth>
               <CheckOut />
