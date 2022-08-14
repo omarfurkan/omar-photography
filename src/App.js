@@ -9,9 +9,11 @@ import Blog from './Components/Blogs/Blogs';
 import About from './Components/About/About';
 import NotFound from './Components/NotFound/NotFound';
 import PageLayout from './Components/PageLayout/PageLayout';
-import { useEffect, useState } from 'react';
+
+
 
 function App() {
+
 
   return (
     <div >
@@ -21,13 +23,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
           <Route path="/checkout/:serviceId" element={
             <RequireAuth>
               <CheckOut />
             </RequireAuth>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Route>
+
         <Route path='*' element={<NotFound />} />
       </Routes>
 

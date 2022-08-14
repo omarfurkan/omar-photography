@@ -29,13 +29,14 @@ const Login = () => {
     }
     const handleSubmit = e => {
         e.preventDefault();
-        if (!user) {
-            signInWithEmailAndPassword(email, password)
-        }
-        navigate(from, { replace: true })
+        signInWithEmailAndPassword(email, password)
 
     }
 
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
 
 
     if (loading) {
@@ -52,7 +53,7 @@ const Login = () => {
 
     return (
         <div className='my-background h-full' >
-            <div className='w-11/12 md:w-4/6  lg:w-3/6 mx-auto pt-20 pb-20'>
+            <div className='w-11/12 md:w-4/6  lg:w-3/6 xl:w-2/6 mx-auto pt-20 pb-20'>
 
                 <div className='border-2'>
                     <p className='text-white text-center'>logo</p>
@@ -67,6 +68,7 @@ const Login = () => {
 
 
                         {error ? <p className='text-red-400 mb-2'>{error.message}</p> : ''}
+                        {resetError}
 
                         <input className='w-full bg-white text-black font-bold py-3 font bold text-xl' type="submit" value="Log In" />
                         <p onClick={() => sendPasswordResetEmail(email)} className='text-white mt-2 mb-0 cursor-pointer'>Forget Pasword?</p>

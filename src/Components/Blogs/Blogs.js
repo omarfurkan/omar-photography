@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Shared/Footer/Footer';
 import Blog from './Blog';
 
 const Blogs = () => {
@@ -23,10 +24,10 @@ const Blogs = () => {
 
     ]
     return (
-        <div className='my-background h-full pb-12'>
+        <div className='my-background h-full'>
             <h1 className='text-center text-white text-4xl pt-8 pb-6 font-semibold'>Blog</h1>
             <hr className='h-4 w-12 mx-auto' />
-            <div className='w-11/12 xl:w-5/6 mx-auto '>
+            <div className='w-11/12 xl:w-5/6 mx-auto  pb-12'>
                 {
                     QA.map((blog, index) =>
                         <Blog
@@ -35,6 +36,7 @@ const Blogs = () => {
                         />)
                 }
             </div>
+            <Footer />
         </div>
     );
 };

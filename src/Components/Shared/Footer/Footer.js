@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsFacebook } from 'react-icons/bs';
+import { ImCamera } from 'react-icons/im';
 
 const Footer = () => {
     return (
@@ -9,7 +10,7 @@ const Footer = () => {
                 <div className='grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-4'>
 
                     <div>
-                        <p>logo</p>
+                        <p><ImCamera className='text-4xl pb-2' /></p>
                         <p>124 20th Street NW. Sute 400
                             <br />
                             Chittagong, Bangladesh

@@ -5,8 +5,10 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useState } from 'react';
 import Loading from '../Loading/Loading';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Signup = () => {
+
     const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -19,7 +21,8 @@ const Signup = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    ] = useCreateUserWithEmailAndPassword(auth);
+
 
     const handleName = e => {
         setName(e.target.value)
@@ -36,12 +39,18 @@ const Signup = () => {
     }
 
     const handleSubmit = e => {
-        e.preventDefault();
+        e.preventDefault()
 
         createUserWithEmailAndPassword(email, password)
-
-
     }
+    useEffect(() => {
+        if (user) {
+            navigate('/')
+        }
+
+    }, [navigate, user])
+
+
     if (loading) {
         return <Loading />
     }
@@ -53,7 +62,7 @@ const Signup = () => {
 
     return (
         <div className='my-background h-full' >
-            <div className='w-11/12  md:w-4/6  lg:w-3/6 mx-auto pt-20 pb-20'>
+            <div className='w-11/12  md:w-4/6  lg:w-3/6 xl:w-2/6 mx-auto pt-20 pb-20'>
                 <div className='border-2'>
                     <p className='text-white text-center'>logo</p>
                     <form onSubmit={handleSubmit} className='pt-8 px-2 md:px-8 lg:px-8  pb-4'>
@@ -66,8 +75,8 @@ const Signup = () => {
                         <input onBlur={handleConfirmPassword} className='w-full mb-4 py-3 pl-4 text-lg' type="password" name="" id="" placeholder='Confirm Password' required />
                         <br />
 
-                        {/* {password != confirmPassword ? <p className='text-red-400 mb-2'>Password did not match </p> : ''} */}
-                        {/* {error ? <p className='text-red-400 mb-2'>{error.message}</p> : ''} */}
+
+                        {error ? <p className='text-red-400 mb-2'>{error.message}</p> : ''}
 
                         <input className='w-full bg-white text-black font-bold py-3 font bold text-xl' type="submit" value="Sign up" />
                     </form>

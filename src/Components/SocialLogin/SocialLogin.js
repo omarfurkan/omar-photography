@@ -4,8 +4,13 @@ import { FaFacebookF } from 'react-icons/fa';
 import { AiFillGithub } from 'react-icons/ai';
 import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const SocialLogin = () => {
+    const navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithFacebook, FbUser, FbLoading, FbError] = useSignInWithFacebook(auth);
     const [signInWithGithub, GitUser, GitLoading, GitError] = useSignInWithGithub(auth);
@@ -18,6 +23,10 @@ const SocialLogin = () => {
     const gitLogin = () => {
         signInWithGithub()
     }
+    if (googleUser || FbUser || GitUser) {
+        navigate(from, { replace: true });
+    }
+
 
     return (
         <div className=' p-2 md:p-8 lg:p-8'>

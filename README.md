@@ -1,3 +1,25 @@
+# Omar Photography
+
+### omar Photography is a individual service providing webiste and user friendly
+
+**Features**
+
+- Individual service providing website with fully responsive
+- Protected Checkout page
+- Impement of firebase authenticationa and authorization system
+- User friendly
+- Unique Design
+
+**Technology Used**
+
+- Tailwind CSS
+- React Router
+- React multiple carousol
+- React icon
+- Firebase
+- Firebase hook
+- React Toastify
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
